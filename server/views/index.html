@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="ejs.min.js"></script>
+</head>
+<body>
+	<div id="exam"></div>
+	<p><%=name %></p>
+	<script src="react.min.js"></script>
+	<script src="react-dom.min.js"></script>
+	<script src="babel.min.js"></script>
+	<script type="text/babel">
+		class Event extends React.Component{
+			constructor(props){
+				super(props);
+				this.num = 5;
+				this.arr = [3,5,7,9,2];
+				this.state = {
+					clickNumber:0
+				}
+			}
+			cons(){
+				this.setState({clickNumber:++this.state.clickNumber});
+			}
+			render(){
+				return (
+					<div>
+						<div onClick ={()=> this.cons()}>click({this.state.clickNumber})</div>
+						<ul>
+							{this.arr.map((item)=><li>{item}</li>)}
+						</ul>	
+						<div>{this.props.name}</div>		
+					</div>
+				)
+			}
+		}
+		ReactDOM.render(<Event name="yuanwei"/>,document.getElementById("exam"));
+	</script>
+</body>
+</html>
