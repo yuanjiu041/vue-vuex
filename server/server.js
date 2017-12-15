@@ -13,10 +13,11 @@ app.on('error', function(err, ctx){
 app.use(logger())
 app.use(static(path.join(__dirname, '../app/public')))
 render(app, {
-	root: path.join(__dirname, 'views'),
+	root: path.join(__dirname, './views'),
 	layout: false,
 	view: 'html'
 })
+
 app.use(router.routes())
 app.use(router.allowedMethods())
 

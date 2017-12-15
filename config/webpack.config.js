@@ -11,16 +11,19 @@ const srcPath = path.join(__dirname, '../app')
 
 const config = {
 	context: srcPath,
-	entry: './app',
+	entry: {
+		app: './app.js'
+	},
 	devtool: 'cheap-module-eval-source-map',
 	output: {
-		path: path.join(__dirname, '../build')
-		filename: '[name].js',
-		chunkFilename: '[name].js'
+		path: path.join(__dirname, '../build'),
+		filename: '[name].js'
 	},
 	resolve: {
 		alias: {
-			component: path.join(srcPath, 'component')
+			components: path.join(srcPath, 'components'),
+			pages: path.join(srcPath, 'pages'),
+			common: path.join(srcPath, 'common')
 		}
 	},
 	module: {
@@ -32,6 +35,11 @@ const config = {
 				options: {
 					id: 'js'
 				}
+			},
+			{
+				test: /\.vue$/,
+				exclude: /node_modules/,
+				loader: 'vue-loader'
 			},
 			{
 				test: /\.(less|css)$/,
@@ -68,13 +76,18 @@ const config = {
 					}
 				},
 				{
-					loader: 'postcss-loader'
-				}
-				{
 					loader: 'less-loader',
 					options: {
 						sourceMap: true
 					}
+				},
+				{
+					loader: 'postcss-loader',
+			    options: {
+            plugins: (loader) => [
+               require('autoprefixer')(),
+            ]
+        	}
 				}
 			],
 			verbose: true,

@@ -7,12 +7,8 @@ module.exports = () => {
 		ctx.body = 'ok'
 	})
 
-	router.get('/index', async ctx => {
-		await ctx.render('index', {name: 'yexun'})
-	})
-
-	router.get('/as', async ctx => {
-		ctx.body = 'sb'
+	router.get('/', async ctx => {
+		await ctx.render('index')
 	})
 
 	return router
