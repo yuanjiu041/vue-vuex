@@ -1,16 +1,80 @@
 <template>
-  <div>
-    <div class='page-header'>这是layout</div>
-    <router-view></router-view>
+  <div class='layout-container'>
+  	<header-top class='header-top' :username=username></header-top>
+    <transition name='my-router'>
+    	<router-view class='page-container'></router-view>
+    </transition>
+    <my-footer class='footer'></my-footer>
   </div>
 </template>
 
-<style scoped>
-  .page-header {
-    border-bottom: solid 1px #f00;
-  }
+<style lang='less'>
+	* {
+		margin: 0;
+	}
+
+	html, body, #app {
+		height: 100%;
+	}
+
+	.layout-container {
+		min-height: 100%;
+
+		.header-top {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+
+		.page-container {
+			padding: 68px 32px 52px 32px;
+		}
+
+		.footer {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			background-color: #333;
+			color: #fff;
+			padding: 12px 20px;
+		}
+	}
+
+	.my-router-enter-active, .my-router-leave-active {
+		position: absolute;
+		transition: all 0.5s;
+	}
+
+	.my-router-enter-to, .my-router-leave {
+		opacity: 1;
+	}
+
+	.my-router-enter {
+		opacity: 0;
+		margin-left: 100%;
+	}
+
+	.my-router-leave-to {
+		opacity: 0;
+		margin-left: -100%;
+	}
 </style>
 
 <script>
-  export default {}
+	import headerTop from 'components/header'
+	import myFooter from 'components/myFooter'
+
+  export default {
+  	data: function () {
+  		return {
+  			username: 'yexun'
+  		}
+  	},
+  	components: {
+  		headerTop,
+  		myFooter
+  	}
+  }
 </script>

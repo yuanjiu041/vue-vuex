@@ -1,6 +1,11 @@
+import Layout from './Layout'
+
+const page1 = r => require.ensure([], () => r(require('pages/page1')), 'page1')
+const page2 = r => require.ensure([], () => r(require('pages/page2')), 'page2')
+
 export default [{
   path: '/',
-  component: require('./Layout.vue').default,
+  component: Layout,
   children: [
     {
       path: '',
@@ -8,7 +13,11 @@ export default [{
     },
     {
       path: '/app',
-      component: require('pages/page1.vue').default
+      component: page1
+    },
+    {
+      path: '/app2',
+      component: page2
     }
   ]
 }]

@@ -20,6 +20,7 @@ const config = {
 		filename: '[name].js'
 	},
 	resolve: {
+		extensions: ['.js', '.json', '.vue', '.less', '.css'],
 		alias: {
 			components: path.join(srcPath, 'components'),
 			pages: path.join(srcPath, 'pages'),
@@ -80,14 +81,6 @@ const config = {
 					options: {
 						sourceMap: true
 					}
-				},
-				{
-					loader: 'postcss-loader',
-			    options: {
-            plugins: (loader) => [
-               require('autoprefixer')(),
-            ]
-        	}
 				}
 			],
 			verbose: true,
