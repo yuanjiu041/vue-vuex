@@ -11,5 +11,9 @@ module.exports = () => {
 		await ctx.render('index')
 	})
 
+  router.get('/api/index', async ctx => {
+    ctx.body = `Hello everyone, my name is yexun.`
+  })
+
 	return router
 }

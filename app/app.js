@@ -16,5 +16,3 @@ var vm = new Vue({
     name: 'yexun'
   }
 })
-
-console.log(vm)
