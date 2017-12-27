@@ -24,7 +24,9 @@ const config = {
 		alias: {
 			components: path.join(srcPath, 'components'),
 			pages: path.join(srcPath, 'pages'),
-			common: path.join(srcPath, 'common')
+			common: path.join(srcPath, 'common'),
+			vue$: "vue/dist/vue.min.js",
+			vuex$: "vuex/dist/vuex.min.js"
 		}
 	},
 	module: {
@@ -43,18 +45,20 @@ const config = {
 				loader: 'vue-loader'
 			},
 			{
-				test: /\.(less|css)$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: [
-						{
-							loader: 'happypack/loader',
-							options: {
-								id: 'less'
-							}
-						}
-					]
-				})
+				test: /\.jpe?g|png|svg|gif/,
+				loader: 'url-loader?limit=8192'
+			},
+			{
+        test: /\.(less|css)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [{
+            loader: 'happypack/loader',
+            options: {
+              id: 'less'
+            }
+          }]
+        })
 			}
 		]
 	},
@@ -93,7 +97,7 @@ const config = {
 			minChunks: 3
 		}),
 		new ExtractTextPlugin({
-			filename: '[name.css]',
+			filename: '[name].css',
 			allChunks: true
 		}),
 		new HtmlWebpackPlugin({

@@ -1,6 +1,6 @@
 <template>
   <div class='layout-container'>
-  	<header-top class='header-top' :username=username></header-top>
+  	<header-top class='header-top'>{{username}}</header-top>
     <transition name='my-router'>
     	<router-view class='page-container'></router-view>
     </transition>
@@ -8,15 +8,7 @@
   </div>
 </template>
 
-<style lang='less'>
-	* {
-		margin: 0;
-	}
-
-	html, body, #app {
-		height: 100%;
-	}
-
+<style lang='less' scpoed>
 	.layout-container {
 		min-height: 100%;
 
@@ -45,6 +37,7 @@
 	.my-router-enter-active, .my-router-leave-active {
 		position: absolute;
 		transition: all 0.5s;
+    width: 100%;
 	}
 
 	.my-router-enter-to, .my-router-leave {

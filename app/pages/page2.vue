@@ -8,7 +8,16 @@
 <style scoped></style>
 
 <script>
+  import { CHANGE_TITLE } from '../store/mutation-types'
+
   export default {
+    beforeMount: function () {
+      this.$store.commit({
+        type: `common/${CHANGE_TITLE}`,
+        value: 'page2'
+      })
+    },
+    mounted: function () {},
     data: function () {
       return {
         name: 'yexun'

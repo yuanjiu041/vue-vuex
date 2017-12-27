@@ -45,7 +45,6 @@ compiler.plugin('done', stats => {
       return fs.outputFileSync(distPath, content)
     }
   }).then(() => {
-    console.log('webpack build success.')
   })
 })
 

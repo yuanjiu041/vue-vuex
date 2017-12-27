@@ -1,0 +1,2 @@
+export const CHANGE_TITLE = 'CHANGE_TITLE'
+export const CHANGE_INFO_DATA = 'CHANGE_INFO_DATA'
