@@ -16,9 +16,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yuanjiu041/react-redux/issues"
+    "url": "https://github.com/yuanjiu041/vue-vuex/issues"
   },
-  "homepage": "https://github.com/yuanjiu041/react-redux#readme",
+  "homepage": "https://github.com/yuanjiu041/vue-vuex#readme",
   "dependencies": {
     "axios": "^0.17.1",
     "koa": "^2.3.0",

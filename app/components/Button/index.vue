@@ -38,13 +38,11 @@
         btnSize
       }
     },
-
     methods: {
       click (msg) {
         this.$emit('click')
       }
     },
-
     props: [
       'size'
     ]

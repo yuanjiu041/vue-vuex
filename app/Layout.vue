@@ -4,7 +4,6 @@
     <transition name='my-router'>
     	<router-view class='page-container'></router-view>
     </transition>
-    <my-footer class='footer'></my-footer>
   </div>
 </template>
 

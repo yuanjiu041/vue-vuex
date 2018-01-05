@@ -11,8 +11,6 @@ const router = new VueRouter({
   mode: 'hash'
 })
 
-console.log(store)
-
 var vm = new Vue({
   el: '#app',
   router,

@@ -2,7 +2,7 @@
 	<div class='container'>
 		<div class='back' @click='goback'></div>
 		<slot class='title'></slot>
-		<div class='info'>{{(info && info.title) || '无'}}</div>
+		<div class='info'>{{(info && info.title)}}</div>
 	</div>
 </template>
 

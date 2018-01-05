@@ -1,3 +1,3 @@
 export default {
-  titleLength: (state) => state.pageTitle.length
+  titleLength: (state, getters) => state.pageTitle.length
 }
