@@ -10,9 +10,10 @@ const devIp = ip()[0]
 
 const root = path.join(__dirname, '..')
 const viewPath = path.join(root, 'server/views')
-const publicPath = (webpackConfig.output.publicPath = `http://${devIp}:9005/build/`)
+const publicPath = (webpackConfig[0].output.publicPath = `http://${devIp}:9005/build/`)
 
-const compiler = webpack(webpackConfig)
+const serverCompile = webpack(webpackConfig[1])
+const compiler = webpack(webpackConfig[0])
 
 const server = new WbepackDevServer(compiler, {
   publicPath: publicPath,
@@ -31,7 +32,7 @@ server.listen(9005, function () {
 })
 
 compiler.plugin('done', stats => {
-  const outputPath = webpackConfig.output.path
+  const outputPath = webpackConfig[0].output.path
   const assets = stats.compilation.assets
 
   Promise.map(Object.keys(assets), file => {
