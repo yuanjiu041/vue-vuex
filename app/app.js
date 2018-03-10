@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './router'
-import store from './store'
+import createStore from './store'
 import Layout from './Layout'
 import './common/styles/index.less'
 
@@ -11,6 +11,8 @@ const router = new VueRouter({
   routes,
   mode: 'hash'
 })
+
+const store = createStore()
 
 export function createApp () {
 	const app = new Vue({
