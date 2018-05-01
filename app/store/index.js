@@ -4,8 +4,10 @@ import common from './common'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store ({
-  modules: {
-    common
-  }
-})
+export default function createStore () {
+  return new Vuex.Store ({
+            modules: {
+              common
+            }
+          })
+}

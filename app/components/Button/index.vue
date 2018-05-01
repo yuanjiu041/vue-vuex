@@ -4,7 +4,7 @@
     :class="[btnSize]"
     @click="$emit('click')"
     >
-    <slot></slot>{{btnSize}}
+    <slot></slot>
   </div>
 </template>
 

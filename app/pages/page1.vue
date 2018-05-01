@@ -19,6 +19,12 @@
   import { GET_DATA } from '../store/action-types'
 
   export default {
+    asyncData ({store}) {
+      return store.dispatch({
+        type: `common/${GET_DATA}`
+      })
+    },
+
     beforeMount: async function () {
       this.$store.commit({
         type: `common/${CHANGE_TITLE}`,
