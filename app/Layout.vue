@@ -1,7 +1,6 @@
 <template>
   <div class='layout-container'>
   	<header-top class='header-top'>
-      {{username}}
   		<router-link to='/app'>app</router-link>
   		<router-link to='/app2'>app2</router-link>
   	</header-top>

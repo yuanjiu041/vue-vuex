@@ -2,9 +2,8 @@ const fs = require('fs')
 const Router = require('koa-router')
 const createBundleRenderer = require('vue-server-renderer').createBundleRenderer
 const createApp = require('../../build/vue-ssr-server-bundle.json')
-
 const render = createBundleRenderer(createApp, {
-	template: fs.readFileSync('build/mytemplate.html', 'utf-8')
+  template: fs.readFileSync('build/mytemplate.html', 'utf-8')
 })
 
 module.exports = () => {
