@@ -13,6 +13,11 @@ app.on('error', function(err, ctx){
 app.use(logger())
 app.use(static(path.join(__dirname, '../build')))
 
+app.use(async (ctx, next) => {
+  console.log(ctx.url)
+  await next()
+})
+
 app.use(router.routes())
 app.use(router.allowedMethods())
 

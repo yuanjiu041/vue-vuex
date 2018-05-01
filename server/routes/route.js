@@ -13,13 +13,17 @@ module.exports = () => {
 		ctx.body = 'ok'
 	})
 
-	router.get('/', async (ctx) => {   
-		const html = await render.renderToString(ctx)
-    ctx.body = html
-	})
-
-  router.get('/api/index', async ctx => {
+  router.get('/yx/api/index', async ctx => {
     ctx.body = `Hello everyone, my name is yexun.`
+  })
+
+  router.get('*', async (ctx) => {
+    ctx.body = await new Promise((resolve, reject) => {
+      render.renderToString(ctx, (err, html) => {
+        if (err) return reject(err)
+        resolve(html)
+      })
+    })
   })
 
 	return router

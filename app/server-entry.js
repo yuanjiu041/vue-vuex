@@ -4,7 +4,8 @@ export default (ctx) => {
 	return new Promise((resolve, reject) => {
 		const { app, router, store } = createApp()
 		router.push(ctx.url)
-		router.onReady(() => {
+
+		router.onReady(async () => {
 			const matchedCmps = router.getMatchedComponents()
 			if (!matchedCmps.length) {
 				reject({
@@ -12,16 +13,18 @@ export default (ctx) => {
 				})
 			}
 
-			Promise.all(matchedCmps.map((cmp) => {
+			await Promise.all(matchedCmps.map(cmp => {
 				if (cmp.asyncData) {
 					return cmp.asyncData({
-						store
+						store,
+						route: router.currentRoute
 					})
 				}
-			})).then(() => {
-				ctx.state = store.state
-				resolve(app)
- 			}).catch(reject)
+			}))
+
+			ctx.state = store.state
+
+			resolve(app)
 		}, reject)
 	})
 }

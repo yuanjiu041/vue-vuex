@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes,
-  mode: 'hash'
+  mode: 'history'
 })
 
 const store = createStore()

@@ -13,13 +13,12 @@
 
 <script>
   import { mapState } from 'vuex'
-  import axios from 'axios'
   import Button from 'components/Button'
   import { CHANGE_TITLE } from '../store/mutation-types'
   import { GET_DATA } from '../store/action-types'
 
   export default {
-    asyncData ({store}) {
+    asyncData ({store, route}) {
       return store.dispatch({
         type: `common/${GET_DATA}`
       })
