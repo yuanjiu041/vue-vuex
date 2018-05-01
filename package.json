@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run compile && npm run server",
+    "start": "npm run compile & npm run server",
     "compile": "webpack --watch --config config/webpack.config.js",
     "server": "nodemon -w server server/server.js",
     "dev": "nodemon -w config -w scripts scripts/server.js",

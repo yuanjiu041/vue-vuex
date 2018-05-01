@@ -90,12 +90,6 @@ const clientConfig = {
       verboseWhenProfiling: true,
       cache: false
     }),
-    /* new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      filename: 'common.js',
-      minChunks: 20
-    }), */
-    // 分离CSS
     new ExtractTextPlugin({
       filename: '[name].css',
       allChunks: true
