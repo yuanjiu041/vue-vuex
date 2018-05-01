@@ -7,11 +7,11 @@ const render = createBundleRenderer(createApp, {
 })
 
 module.exports = () => {
-	const router = new Router()
+  const router = new Router()
 
-	router.all('/checkout_heart', async ctx => {
-		ctx.body = 'ok'
-	})
+  router.all('/checkout_heart', async ctx => {
+    ctx.body = 'ok'
+  })
 
   router.get('/yx/api/index', async ctx => {
     ctx.body = `Hello everyone, my name is yexun.`
@@ -26,5 +26,5 @@ module.exports = () => {
     })
   })
 
-	return router
+  return router
 }
