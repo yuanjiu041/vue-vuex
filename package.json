@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/yuanjiu041/vue-vuex#readme",
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "bluebird": "^3.5.1",
     "koa": "^2.3.0",
     "koa-ejs": "^4.1.0",
@@ -29,12 +29,13 @@
     "koa-router": "^7.2.1",
     "koa-static": "^4.0.1",
     "less": "^3.0.0-alpha.3",
+    "mem": "^4.0.0",
     "vue": "^2.5.10",
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.10",
     "vue-template-compiler": "^2.5.10",
     "vuex": "^3.0.1",
-    "webpack-dev-server": "^2.9.7"
+    "webpack-dev-server": "^3.1.11"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
