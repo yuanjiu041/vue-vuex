@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/yuanjiu041/vue-vuex#readme",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "bluebird": "^3.5.1",
     "koa": "^2.3.0",
     "koa-ejs": "^4.1.0",
